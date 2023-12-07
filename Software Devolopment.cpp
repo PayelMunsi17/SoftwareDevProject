@@ -3,23 +3,38 @@
 
 using namespace std;
 
-string user;
-int pass;
+    string regUser;
+    int regPass;
+
+void Registration(){
+
+    cout<<"                                          REGISTRATION                                     "<<endl;
+    cout << "          -------------------------------------------------------------------------\n" << endl;
+    cout << "        REGISTER USER-NAME : ";
+    cin >> regUser;
+    cout << "\n\n        REGISTER PASSWORD : ";
+    cin >> regPass;
+}
 
 void login(){
+    void Registration();
+    system("cls");
+    string user;
+    int pass;
     cout<<"                                    WELCOME TO NUB HOSPITAL                                     "<<endl;
     cout << "          -------------------------------------------------------------------------\n" << endl;
-    cout << "                 USER-NAME : ";
+    cout << "           LOGIN USER-NAME : ";
     cin >> user;
-    cout << "\n\n                 PASSWORD : ";
+    cout << "\n\n           LOGIN PASSWORD : ";
     cin >> pass;
-    if (user=="PAYEL" || user=="payel" && pass==526)
+    system("cls");
+    if (user==regUser && pass==regPass)
     {
-        system("cls");
+        cout<<"LOGIN SUCCESSFULLY!!!!\n\n";
     }
     else
     {
-        system("cls");
+
         cout << "\n                LOGIN FAILED.....! PLEASE CHECK YOUR PASSWORD.\n\n";
 
         return login();
@@ -79,11 +94,11 @@ public:
             case 3:
                 std::cout<<"\n\n                                                     ORTHOPEDIC                                     "<<endl;
                 std::cout<< "          -----------------------------------------------------------------------------------------------\n"<< endl;
-                std::cout<<"            11.NAME=Dr.Rahadul Islam Rifat      AVAILABLE=7am-10am             APPOINTMENT CHARGE=1000 Tk\n"<< endl;
-                std::cout<<"\n            12.NAME=Dr.Mahin Rohman             AVAILABLE=10am-1pm             APPOINTMENT CHARGE=900 Tk\n"<< endl;
-                std::cout<<"\n            13.NAME=Dr.Alif Sheikh              AVAILABLE=1pm-3pm              APPOINTMENT CHARGE=800 Tk\n"<< endl;
-                std::cout<<"\n            14.NAME=Dr.Sayid Khan               AVAILABLE=3pm-5pm              APPOINTMENT CHARGE=700 Tk\n"<< endl;
-                std::cout<<"\n            15.NAME=Dr.Siam                     AVAILABLE=5pm-7pm              APPOINTMENT CHARGE=600 Tk\n"<< endl;
+                std::cout<<"            11.Dr.Rahadul Islam Rifat      AVAILABLE=7am-10am             APPOINTMENT CHARGE=1000 Tk\n"<< endl;
+                std::cout<<"\n            12.Dr.Mahin Rohman             AVAILABLE=10am-1pm             APPOINTMENT CHARGE=900 Tk\n"<< endl;
+                std::cout<<"\n            13.Dr.Alif Sheikh              AVAILABLE=1pm-3pm              APPOINTMENT CHARGE=800 Tk\n"<< endl;
+                std::cout<<"\n            14.Dr.Sayid Khan               AVAILABLE=3pm-5pm              APPOINTMENT CHARGE=700 Tk\n"<< endl;
+                std::cout<<"\n            15.Dr.Siam                     AVAILABLE=5pm-7pm              APPOINTMENT CHARGE=600 Tk\n"<< endl;
                 std::cout<< "          -----------------------------------------------------------------------------------------------"<< endl;
                 break;
             default:
@@ -484,6 +499,7 @@ public:
 
 
 int main() {
+    Registration ();
     login();
     HospitalSystem hospital;
     int choice;
@@ -495,7 +511,6 @@ int main() {
         cout << "\n\n\n\n\n\n\n\n\n\n\n                                                                 ------------------------"<<endl;
         cout << "                                                                  ENTER YOUR OPTION :";
         cin >> choice;
-        cin.ignore();  // Clear the input buffer
 
         switch (choice) {
             case 1:
@@ -520,5 +535,3 @@ int main() {
 
     return 0;
 }
-
-
