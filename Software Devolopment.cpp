@@ -3,8 +3,10 @@
 
 using namespace std;
 
-    string regUser;
-    int regPass;
+    string regUser,regPass ;          //use for registration.
+    string name,gender,blood,address;             //use for patient's details.
+    int age;        //use for patient's details.
+    int doctor;
 
 void Registration(){
 
@@ -19,8 +21,7 @@ void Registration(){
 void login(){
     void Registration();
     system("cls");
-    string user;
-    int pass;
+    string user,pass;     //use for login.
     cout<<"                                    WELCOME TO NUB HOSPITAL                                     "<<endl;
     cout << "          -------------------------------------------------------------------------\n" << endl;
     cout << "           LOGIN USER-NAME : ";
@@ -37,7 +38,7 @@ void login(){
 
         cout << "\n                LOGIN FAILED.....! PLEASE CHECK YOUR PASSWORD.\n\n";
 
-        return login();
+        return login();   //Go back in to Login Page.
     }
 }
 
@@ -45,14 +46,14 @@ void login(){
 class HospitalSystem {
 
 public:
-    void showMenu() {
+    void HomePage() {
         cout << "                                    HOSPITAL SYSTEM MENU                                " << endl;
         cout<< "         -------------------------------------------------------------------------------\n"<< endl;
         cout << "              1. APPOINTMENT\n\n" << endl;
         cout << "              2. EXIT\n\n" << endl;
     }
 
-    void showAppointmentMenu() {
+    void AppointmentList() {
         system ("cls");
         cout << "                                      APPOINTMENT MENU                                  " << endl;
         cout<< "         ------------------------------------------------------------------------------\n\n"<< endl;
@@ -61,13 +62,12 @@ public:
         cout << "                3. ORTHOPEDIC\n\n\n" << endl;
     }
 
-    void makeAppointment() {
+    void DoctorList() {
         int option;
-        showAppointmentMenu();
+        AppointmentList();
         cout << "\n\n\n\n\n\n\n\n                                                                 ---------------------"<<endl;
         cout << "                                                                 ENTER YOUR OPTION :";
         cin >> option;
-        cin.ignore();
         system ("cls");
 
         switch (option) {
@@ -103,385 +103,232 @@ public:
                 break;
             default:
                 cout<< "Invalid option." << endl;
-                makeAppointment();
+                DoctorList();
         }
     }
-
-    void selectDoctor()
-    {
-        int doctor;
-        string name,gender,blood,address;
-        int age;
-
-         makeAppointment();
+    void patientDetails(){
+        DoctorList();
         cout<<"\n\n\n\n\n\n                                                                                         SELECT DOCTOR :";
         cin>>doctor;
         cin.ignore();
         system("cls");
+        cout<<"\n                                             PATIENT'S DETAILS                                             "<<endl;
+        cout<<"\n           ---------------------------------------------------------------------------------               \n\n"<<endl;
+        cout<<"                           PATIENT NAME           : ";
+        cin>>name;
+        cout<<"\n\n                           PATIENT AGE            : ";
+        cin>>age;
+        cout<<"\n\n                           PATIENT GENDER         : ";
+        cin>>gender;
+        cout<<"\n\n                           PATIENT BLOOD GRP      : ";
+        cin>>blood;
+        cout<<"\n\n                           PATIENT ADDRESS        : ";
+        cin>>address;
+        system("cls");
+    }
+
+    void PaymentDetails()
+    {
+        patientDetails();
+
 
             switch (doctor)
             {
             case 1:
-                cout<<"\n                                             PATIENT'S DETAILS                                             "<<endl;
-                cout<<"\n           ---------------------------------------------------------------------------------               \n\n"<<endl;
-                cout<<"                           PATIENT NAME           : ";
-                cin>>name;
-                cout<<"\n\n                           PATIENT AGE            : ";
-                cin>>age;
-                cout<<"\n\n                           PATIENT GENDER         : ";
-                cin>>gender;
-                cout<<"\n\n                           PATIENT BLOOD GRP      : ";
-                cin>>blood;
-                cout<<"\n\n                           PATIENT ADDRESS        : ";
-                cin>>address;
-                system("cls");
                 cout<<"\n                                                      PAYMENT                                            "<<endl;
                 cout<<"           -----------------------------------------------------------------------------------------------\n"<<endl;
                 cout<<"                   NAME          : "<<name<<"\n\n                   AGE           : "<<age<<endl;
                 cout<<"\n                   GENDER        : "<<gender<<"\n\n                   BLOOD         : "<<blood<<endl;
-                cout<<"\n                  ADDRESS       : "<<address<<endl;
+                cout<<"\n                   ADDRESS       : "<<address<<endl;
                 cout<<"\n\n                                                  DOCTOR'S DETAILS                                          "<<endl;
                 cout<<"           -----------------------------------------------------------------------------------------------\n"<<endl;
                 cout<<"             Dr.Maruf Hossain Anon             AVAILABLE=7am-10am             APPOINTMENT CHARGE=1000 Tk\n"<< endl;
                 cout<<"           -----------------------------------------------------------------------------------------------"<<endl;
                 break;
+
+
             case 2:
-                cout<<"                                             PATIENT'S DETAILS                                             "<<endl;
-                cout<<"           ---------------------------------------------------------------------------------               \n\n"<<endl;
-                cout<<"                           PATIENT NAME           : ";
-                cin>>name;
-                cout<<"\n\n                           PATIENT AGE            : ";
-                cin>>age;
-                cout<<"\n\n                           PATIENT GENDER         : ";
-                cin>>gender;
-                cout<<"\n\n                           PATIENT BLOOD GRP      : ";
-                cin>>blood;
-                cout<<"\n\n                           PATIENT ADDRESS        : ";
-                cin>>address;
-                system("cls");
                 cout<<"\n                                                      PAYMENT                                            "<<endl;
                 cout<<"           -----------------------------------------------------------------------------------------------\n"<<endl;
                 cout<<"                   NAME          : "<<name<<"\n\n                   AGE           : "<<age<<endl;
                 cout<<"\n                   GENDER        : "<<gender<<"\n\n                   BLOOD         : "<<blood<<endl;
-                cout<<"\n                  ADDRESS       : "<<address<<endl;
+                cout<<"\n                   ADDRESS       : "<<address<<endl;
                 cout<<"\n\n                                                  DOCTOR'S DETAILS                                          "<<endl;
                 cout<<"           -----------------------------------------------------------------------------------------------\n"<<endl;
                 cout<<"\n            Dr.Payel Munsi                    AVAILABLE=10am-1pm             APPOINTMENT CHARGE=900 Tk\n"<< endl;
                 cout<<"           -----------------------------------------------------------------------------------------------\n"<<endl;
                 break;
+
+
             case 3:
-                cout<<"                                             PATIENT'S DETAILS                                             "<<endl;
-                cout<<"           ---------------------------------------------------------------------------------               \n\n"<<endl;
-                cout<<"                           PATIENT NAME           : ";
-                cin>>name;
-                cout<<"\n\n                           PATIENT AGE            : ";
-                cin>>age;
-                cout<<"\n\n                           PATIENT GENDER         : ";
-                cin>>gender;
-                cout<<"\n\n                           PATIENT BLOOD GRP      : ";
-                cin>>blood;
-                cout<<"\n\n                           PATIENT ADDRESS        : ";
-                cin>>address;
-                system("cls");
                 cout<<"\n                                                      PAYMENT                                            "<<endl;
                 cout<<"           -----------------------------------------------------------------------------------------------\n"<<endl;
                 cout<<"                   NAME          : "<<name<<"\n\n                   AGE           : "<<age<<endl;
                 cout<<"\n                   GENDER        : "<<gender<<"\n\n                   BLOOD         : "<<blood<<endl;
-                cout<<"\n                  ADDRESS       : "<<address<<endl;
+                cout<<"\n                   ADDRESS       : "<<address<<endl;
                 cout<<"\n\n                                                  DOCTOR'S DETAILS                                          "<<endl;
                 cout<<"           -----------------------------------------------------------------------------------------------\n"<<endl;
                 cout<<"\n            Dr.Himel Khan                     AVAILABLE=1pm-3pm              APPOINTMENT CHARGE=800 Tk\n"<< endl;
                 cout<<"           -----------------------------------------------------------------------------------------------\n"<<endl;
                 break;
+
+
             case 4:
-                cout<<"                                             PATIENT'S DETAILS                                             "<<endl;
-                cout<<"           ---------------------------------------------------------------------------------               \n\n"<<endl;
-                cout<<"                           PATIENT NAME           : ";
-                cin>>name;
-                cout<<"\n\n                           PATIENT AGE            : ";
-                cin>>age;
-                cout<<"\n\n                           PATIENT GENDER         : ";
-                cin>>gender;
-                cout<<"\n\n                           PATIENT BLOOD GRP      : ";
-                cin>>blood;
-                cout<<"\n\n                           PATIENT ADDRESS        : ";
-                cin>>address;
-                system("cls");
                 cout<<"\n                                                      PAYMENT                                            "<<endl;
                 cout<<"           -----------------------------------------------------------------------------------------------\n"<<endl;
                 cout<<"                   NAME          : "<<name<<"\n\n                   AGE           : "<<age<<endl;
                 cout<<"\n                   GENDER        : "<<gender<<"\n\n                   BLOOD         : "<<blood<<endl;
-                cout<<"\n                  ADDRESS       : "<<address<<endl;
+                cout<<"\n                   ADDRESS       : "<<address<<endl;
                 cout<<"\n\n                                                  DOCTOR'S DETAILS                                          "<<endl;
                 cout<<"           -----------------------------------------------------------------------------------------------\n"<<endl;
                 cout<<"\n            Dr.Emran Hossain                  AVAILABLE=3pm-5pm              APPOINTMENT CHARGE=700 Tk\n"<< endl;
                 cout<<"           -----------------------------------------------------------------------------------------------\n"<<endl;
                 break;
+
+
             case 5:
-               cout<<"                                             PATIENT'S DETAILS                                             "<<endl;
-                cout<<"           ---------------------------------------------------------------------------------               \n\n"<<endl;
-                cout<<"                           PATIENT NAME           : ";
-                cin>>name;
-                cout<<"\n\n                           PATIENT AGE            : ";
-                cin>>age;
-                cout<<"\n\n                           PATIENT GENDER         : ";
-                cin>>gender;
-                cout<<"\n\n                           PATIENT BLOOD GRP      : ";
-                cin>>blood;
-                cout<<"\n\n                           PATIENT ADDRESS        : ";
-                cin>>address;
-                system("cls");
                 cout<<"\n                                                      PAYMENT                                            "<<endl;
                 cout<<"           -----------------------------------------------------------------------------------------------\n"<<endl;
                 cout<<"                   NAME          : "<<name<<"\n\n                   AGE           : "<<age<<endl;
                 cout<<"\n                   GENDER        : "<<gender<<"\n\n                   BLOOD         : "<<blood<<endl;
-                cout<<"\n                  ADDRESS       : "<<address<<endl;
+                cout<<"\n                   ADDRESS       : "<<address<<endl;
                 cout<<"\n\n                                                  DOCTOR'S DETAILS                                          "<<endl;
                 cout<<"           -----------------------------------------------------------------------------------------------\n"<<endl;
                 cout<<"\n            Dr.Md.Riad                        AVAILABLE=5pm-7pm              APPOINTMENT CHARGE=600Tk\n"<< endl;
                 cout<<"           -----------------------------------------------------------------------------------------------\n"<<endl;
                 break;
 
+
             case 6:
-                cout<<"                                             PATIENT'S DETAILS                                             "<<endl;
-                cout<<"           ---------------------------------------------------------------------------------               \n\n"<<endl;
-                cout<<"                           PATIENT NAME           : ";
-                cin>>name;
-                cout<<"\n\n                           PATIENT AGE            : ";
-                cin>>age;
-                cout<<"\n\n                           PATIENT GENDER         : ";
-                cin>>gender;
-                cout<<"\n\n                           PATIENT BLOOD GRP      : ";
-                cin>>blood;
-                cout<<"\n\n                           PATIENT ADDRESS        : ";
-                cin>>address;
-                system("cls");
                 cout<<"\n                                                      PAYMENT                                            "<<endl;
                 cout<<"           -----------------------------------------------------------------------------------------------\n"<<endl;
                 cout<<"                   NAME          : "<<name<<"\n\n                   AGE           : "<<age<<endl;
                 cout<<"\n                   GENDER        : "<<gender<<"\n\n                   BLOOD         : "<<blood<<endl;
-                cout<<"\n                  ADDRESS       : "<<address<<endl;
+                cout<<"\n                   ADDRESS       : "<<address<<endl;
                 cout<<"\n\n                                                  DOCTOR'S DETAILS                                          "<<endl;
                 cout<<"           -----------------------------------------------------------------------------------------------\n"<<endl;
                 cout<<"             Dr.Mamunul Islam Shuvo            AVAILABLE=7am-10am             APPOINTMENT CHARGE=1000 Tk\n"<< endl;
                 cout<<"           -----------------------------------------------------------------------------------------------\n"<<endl;
                 break;
+
+
             case 7:
-                cout<<"                                             PATIENT'S DETAILS                                             "<<endl;
-                cout<<"           ---------------------------------------------------------------------------------               \n\n"<<endl;
-                cout<<"                           PATIENT NAME           : ";
-                cin>>name;
-                cout<<"\n\n                           PATIENT AGE            : ";
-                cin>>age;
-                cout<<"\n\n                           PATIENT GENDER         : ";
-                cin>>gender;
-                cout<<"\n\n                           PATIENT BLOOD GRP      : ";
-                cin>>blood;
-                cout<<"\n\n                           PATIENT ADDRESS        : ";
-                cin>>address;
-                system("cls");
                 cout<<"\n                                                      PAYMENT                                            "<<endl;
                 cout<<"           -----------------------------------------------------------------------------------------------\n"<<endl;
                 cout<<"                   NAME          : "<<name<<"\n\n                   AGE           : "<<age<<endl;
                 cout<<"\n                   GENDER        : "<<gender<<"\n\n                   BLOOD         : "<<blood<<endl;
-                cout<<"\n                  ADDRESS       : "<<address<<endl;
+                cout<<"\n                   ADDRESS       : "<<address<<endl;
                 cout<<"\n\n                                                  DOCTOR'S DETAILS                                          "<<endl;
                 cout<<"           -----------------------------------------------------------------------------------------------\n"<<endl;
                 cout<<"\n            Dr.shawon Hossain                 AVAILABLE=10am-1pm             APPOINTMENT CHARGE=900 Tk\n"<< endl;
                 cout<<"           -----------------------------------------------------------------------------------------------\n"<<endl;
                 break;
+
+
             case 8:
-               cout<<"                                             PATIENT'S DETAILS                                             "<<endl;
-                cout<<"           ---------------------------------------------------------------------------------               \n\n"<<endl;
-                cout<<"                           PATIENT NAME           : ";
-                cin>>name;
-                cout<<"\n\n                           PATIENT AGE            : ";
-                cin>>age;
-                cout<<"\n\n                           PATIENT GENDER         : ";
-                cin>>gender;
-                cout<<"\n\n                           PATIENT BLOOD GRP      : ";
-                cin>>blood;
-                cout<<"\n\n                           PATIENT ADDRESS        : ";
-                cin>>address;
-                system("cls");
                 cout<<"\n                                                      PAYMENT                                            "<<endl;
                 cout<<"           -----------------------------------------------------------------------------------------------\n"<<endl;
                 cout<<"                   NAME          : "<<name<<"\n\n                   AGE           : "<<age<<endl;
                 cout<<"\n                   GENDER        : "<<gender<<"\n\n                   BLOOD         : "<<blood<<endl;
-                cout<<"\n                  ADDRESS       : "<<address<<endl;
+                cout<<"\n                   ADDRESS       : "<<address<<endl;
                 cout<<"\n\n                                                  DOCTOR'S DETAILS                                          "<<endl;
                 cout<<"           -----------------------------------------------------------------------------------------------\n"<<endl;
                 cout<<"\n            Dr.Rasel                          AVAILABLE=1pm-3pm              APPOINTMENT CHARGE=800 Tk\n"<< endl;
                 cout<<"           -----------------------------------------------------------------------------------------------\n"<<endl;
                 break;
+
+
             case 9:
-               cout<<"                                             PATIENT'S DETAILS                                             "<<endl;
-                cout<<"           ---------------------------------------------------------------------------------               \n\n"<<endl;
-                cout<<"                           PATIENT NAME           : ";
-                cin>>name;
-                cout<<"\n\n                           PATIENT AGE            : ";
-                cin>>age;
-                cout<<"\n\n                           PATIENT GENDER         : ";
-                cin>>gender;
-                cout<<"\n\n                           PATIENT BLOOD GRP      : ";
-                cin>>blood;
-                cout<<"\n\n                           PATIENT ADDRESS        : ";
-                cin>>address;
-                system("cls");
                 cout<<"\n                                                      PAYMENT                                            "<<endl;
                 cout<<"           -----------------------------------------------------------------------------------------------\n"<<endl;
                 cout<<"                   NAME          : "<<name<<"\n\n                   AGE           : "<<age<<endl;
                 cout<<"\n                   GENDER        : "<<gender<<"\n\n                   BLOOD         : "<<blood<<endl;
-                cout<<"\n                  ADDRESS       : "<<address<<endl;
+                cout<<"\n                   ADDRESS       : "<<address<<endl;
                 cout<<"\n\n                                                  DOCTOR'S DETAILS                                          "<<endl;
                 cout<<"           -----------------------------------------------------------------------------------------------\n"<<endl;
                 cout<<"\n            Dr.Eyad Ali                       AVAILABLE=3pm-5pm              APPOINTMENT CHARGE=700 Tk\n"<< endl;
                 cout<<"           -----------------------------------------------------------------------------------------------\n"<<endl;
                 break;
+
+
             case 10:
-              cout<<"                                             PATIENT'S DETAILS                                             "<<endl;
-                cout<<"           ---------------------------------------------------------------------------------               \n\n"<<endl;
-                cout<<"                           PATIENT NAME           : ";
-                cin>>name;
-                cout<<"\n\n                           PATIENT AGE            : ";
-                cin>>age;
-                cout<<"\n\n                           PATIENT GENDER         : ";
-                cin>>gender;
-                cout<<"\n\n                           PATIENT BLOOD GRP      : ";
-                cin>>blood;
-                cout<<"\n\n                           PATIENT ADDRESS        : ";
-                cin>>address;
-                system("cls");
                 cout<<"\n                                                      PAYMENT                                            "<<endl;
                 cout<<"           -----------------------------------------------------------------------------------------------\n"<<endl;
                 cout<<"                   NAME          : "<<name<<"\n\n                   AGE           : "<<age<<endl;
                 cout<<"\n                   GENDER        : "<<gender<<"\n\n                   BLOOD         : "<<blood<<endl;
-                cout<<"\n                  ADDRESS       : "<<address<<endl;
+                cout<<"\n                   ADDRESS       : "<<address<<endl;
                 cout<<"\n\n                                                  DOCTOR'S DETAILS                                          "<<endl;
                 cout<<"           -----------------------------------------------------------------------------------------------\n"<<endl;
                 cout<<"\n            Dr.Murad                         AVAILABLE=5pm-7pm              APPOINTMENT CHARGE=600 Tk\n"<< endl;
                 cout<<"           -----------------------------------------------------------------------------------------------\n"<<endl;
                 break;
+
+
             case 11:
-                cout<<"                                             PATIENT'S DETAILS                                             "<<endl;
-                cout<<"           ---------------------------------------------------------------------------------               \n\n"<<endl;
-                cout<<"                           PATIENT NAME           : ";
-                cin>>name;
-                cout<<"\n\n                           PATIENT AGE            : ";
-                cin>>age;
-                cout<<"\n\n                           PATIENT GENDER         : ";
-                cin>>gender;
-                cout<<"\n\n                           PATIENT BLOOD GRP      : ";
-                cin>>blood;
-                cout<<"\n\n                           PATIENT ADDRESS        : ";
-                cin>>address;
-                system("cls");
                 cout<<"\n                                                      PAYMENT                                            "<<endl;
                 cout<<"           -----------------------------------------------------------------------------------------------\n"<<endl;
                 cout<<"                   NAME          : "<<name<<"\n\n                   AGE           : "<<age<<endl;
                 cout<<"\n                   GENDER        : "<<gender<<"\n\n                   BLOOD         : "<<blood<<endl;
-                cout<<"\n                  ADDRESS       : "<<address<<endl;
+                cout<<"\n                   ADDRESS       : "<<address<<endl;
                 cout<<"\n\n                                                  DOCTOR'S DETAILS                                          "<<endl;
                 cout<<"           -----------------------------------------------------------------------------------------------\n"<<endl;
                 cout<<"               Dr.Rahadul Islam Rifat      AVAILABLE=7am-10am             APPOINTMENT CHARGE=1000 Tk\n"<< endl;
                 cout<<"           -----------------------------------------------------------------------------------------------\n"<<endl;
                 break;
+
+
             case 12:
-                cout<<"                                             PATIENT'S DETAILS                                             "<<endl;
-                cout<<"           ---------------------------------------------------------------------------------               \n\n"<<endl;
-                cout<<"                           PATIENT NAME           : ";
-                cin>>name;
-                cout<<"\n\n                           PATIENT AGE            : ";
-                cin>>age;
-                cout<<"\n\n                           PATIENT GENDER         : ";
-                cin>>gender;
-                cout<<"\n\n                           PATIENT BLOOD GRP      : ";
-                cin>>blood;
-                cout<<"\n\n                           PATIENT ADDRESS        : ";
-                cin>>address;
-                system("cls");
                 cout<<"\n                                                      PAYMENT                                            "<<endl;
                 cout<<"           -----------------------------------------------------------------------------------------------\n"<<endl;
                 cout<<"                   NAME          : "<<name<<"\n\n                   AGE           : "<<age<<endl;
                 cout<<"\n                   GENDER        : "<<gender<<"\n\n                   BLOOD         : "<<blood<<endl;
-                cout<<"\n                  ADDRESS       : "<<address<<endl;
+                cout<<"\n                   ADDRESS       : "<<address<<endl;
                 cout<<"\n\n                                                  DOCTOR'S DETAILS                                          "<<endl;
                 cout<<"           -----------------------------------------------------------------------------------------------\n"<<endl;
                 cout<<"\n              Dr.Mahin Rohman             AVAILABLE=10am-1pm             APPOINTMENT CHARGE=900 Tk\n"<< endl;
                 cout<<"           -----------------------------------------------------------------------------------------------\n"<<endl;
                 break;
+
+
             case 13:
-               cout<<"                                             PATIENT'S DETAILS                                             "<<endl;
-                cout<<"           ---------------------------------------------------------------------------------               \n\n"<<endl;
-                cout<<"                           PATIENT NAME           : ";
-                cin>>name;
-                cout<<"\n\n                           PATIENT AGE            : ";
-                cin>>age;
-                cout<<"\n\n                           PATIENT GENDER         : ";
-                cin>>gender;
-                cout<<"\n\n                           PATIENT BLOOD GRP      : ";
-                cin>>blood;
-                cout<<"\n\n                           PATIENT ADDRESS        : ";
-                cin>>address;
-                system("cls");
                 cout<<"\n                                                      PAYMENT                                            "<<endl;
                 cout<<"           -----------------------------------------------------------------------------------------------\n"<<endl;
                 cout<<"                   NAME          : "<<name<<"\n\n                   AGE           : "<<age<<endl;
                 cout<<"\n                   GENDER        : "<<gender<<"\n\n                   BLOOD         : "<<blood<<endl;
-                cout<<"\n                  ADDRESS       : "<<address<<endl;
+                cout<<"\n                   ADDRESS       : "<<address<<endl;
                 cout<<"\n\n                                                  DOCTOR'S DETAILS                                          "<<endl;
                 cout<<"           -----------------------------------------------------------------------------------------------\n"<<endl;
                 cout<<"\n            Dr.Alif Sheikh              AVAILABLE=1pm-3pm              APPOINTMENT CHARGE=800 Tk\n"<< endl;
                 cout<<"           -----------------------------------------------------------------------------------------------\n"<<endl;
                 break;
+
+
             case 14:
-                cout<<"                                             PATIENT'S DETAILS                                             "<<endl;
-                cout<<"           ---------------------------------------------------------------------------------               \n\n"<<endl;
-                cout<<"                           PATIENT NAME           : ";
-                cin>>name;
-                cout<<"\n\n                           PATIENT AGE            : ";
-                cin>>age;
-                cout<<"\n\n                           PATIENT GENDER         : ";
-                cin>>gender;
-                cout<<"\n\n                           PATIENT BLOOD GRP      : ";
-                cin>>blood;
-                cout<<"\n\n                           PATIENT ADDRESS        : ";
-                cin>>address;
-                system("cls");
                 cout<<"\n                                                      PAYMENT                                            "<<endl;
                 cout<<"           -----------------------------------------------------------------------------------------------\n"<<endl;
                 cout<<"                   NAME          : "<<name<<"\n\n                   AGE           : "<<age<<endl;
                 cout<<"\n                   GENDER        : "<<gender<<"\n\n                   BLOOD         : "<<blood<<endl;
-                cout<<"\n                  ADDRESS       : "<<address<<endl;
+                cout<<"\n                   ADDRESS       : "<<address<<endl;
                 cout<<"\n\n                                                  DOCTOR'S DETAILS                                          "<<endl;
                 cout<<"           -----------------------------------------------------------------------------------------------\n"<<endl;
                 cout<<"\n              Dr.Sayid Khan               AVAILABLE=3pm-5pm              APPOINTMENT CHARGE=700 Tk\n"<< endl;
                 cout<<"           -----------------------------------------------------------------------------------------------\n"<<endl;
                 break;
+
+
             case 15:
-                cout<<"                                             PATIENT'S DETAILS                                             "<<endl;
-                cout<<"           ---------------------------------------------------------------------------------               \n\n"<<endl;
-                cout<<"                           PATIENT NAME           : ";
-                cin>>name;
-                cout<<"\n\n                           PATIENT AGE            : ";
-                cin>>age;
-                cout<<"\n\n                           PATIENT GENDER         : ";
-                cin>>gender;
-                cout<<"\n\n                           PATIENT BLOOD GRP      : ";
-                cin>>blood;
-                cout<<"\n\n                           PATIENT ADDRESS        : ";
-                cin>>address;
-                system("cls");
                 cout<<"\n                                                      PAYMENT                                            "<<endl;
                 cout<<"           -----------------------------------------------------------------------------------------------\n"<<endl;
                 cout<<"                   NAME          : "<<name<<"\n\n                   AGE           : "<<age<<endl;
                 cout<<"\n                   GENDER        : "<<gender<<"\n\n                   BLOOD         : "<<blood<<endl;
-                cout<<"\n                  ADDRESS       : "<<address<<endl;
+                cout<<"\n                   ADDRESS       : "<<address<<endl;
                 cout<<"\n\n                                                  DOCTOR'S DETAILS                                          "<<endl;
                 cout<<"           -----------------------------------------------------------------------------------------------\n"<<endl;
                 cout<<"\n              Dr.Siam                     AVAILABLE=5pm-7pm              APPOINTMENT CHARGE=600 Tk\n"<< endl;
                 cout<<"           -----------------------------------------------------------------------------------------------\n"<<endl;
                 break;
+
+
             }
             if(gender=="male" || gender=="MALE")
             {
@@ -507,7 +354,7 @@ int main() {
 
 
     do {
-        hospital.showMenu();
+        hospital.HomePage();
         cout << "\n\n\n\n\n\n\n\n\n\n\n                                                                 ------------------------"<<endl;
         cout << "                                                                  ENTER YOUR OPTION :";
         cin >> choice;
@@ -515,16 +362,18 @@ int main() {
         switch (choice) {
             case 1:
                 system("cls");
-                hospital.selectDoctor();
+                hospital.PaymentDetails();
                 return 0;
-
                 break;
+
+
             case 2:
                 cout<< "--------------------------"<< endl;
                 cout << "\n\n\nGoodbye!--- Have a Nice Day!!!\n\n\n" << endl;
                 cout<< "--------------------------"<< endl;
-
                 break;
+
+
             default:
                 cout<< "--------------------------"<< endl;
                 cout << "\n\n\nInvalid option. Please try again.\n\n\n" << endl;
